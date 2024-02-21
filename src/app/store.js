@@ -1,4 +1,4 @@
-// This file create the store of Redux.
+// // This file create the store of Redux.
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 
