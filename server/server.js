@@ -19,8 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, '../dist')));
 
 // route handlers
-// app.use('/home', homeRouter);
-// app.use('/finance', financeRouter);
+app.use('/home', homeRouter);
+app.use('/finance', financeRouter);
 
 
 app.get('/purchase', async (req, res) => {
