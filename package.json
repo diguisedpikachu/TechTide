@@ -5,9 +5,9 @@
   "main": "dist/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server/server.js",
+    "start": "nodemon server/server.js",
     "build": "webpack --mode=production --node-env=production",
-    "dev": "webpack serve --open --mode=development & nodemon ./server/server.js",
+    "dev": "nodemon server/server.js & webpack serve --open --mode=development",
     "serve": "webpack serve"
   },
   "author": "",
