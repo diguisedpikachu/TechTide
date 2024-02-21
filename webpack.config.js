@@ -21,6 +21,7 @@ const config = {
         compress: true,
         port: 8080,
         proxy: {
+            '/home': 'http://localhost:3000',
             '/api': {
             target: 'http://localhost:3000',
             pathRewrite: { '^/api': '' },
