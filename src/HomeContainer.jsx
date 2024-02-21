@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import Article from "./Article.jsx";
 
 
@@ -10,6 +10,8 @@ const HomeContainer = () => {
     const articleObjects = [];
     const [articleComponentList , setArticleComponentList] = useState([]);
     const newarticleComponentList = [];
+
+    useEffect(() => {
 
     fetch('http://localhost:3000/home/getToken')
     .then((response) => response.json())
@@ -45,7 +47,8 @@ const HomeContainer = () => {
         });
 
     })
-  
+
+    }, [])
 
 
     return (
