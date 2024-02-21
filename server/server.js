@@ -23,14 +23,14 @@ app.use('/home', homeRouter);
 app.use('/finance', financeRouter);
 
 
-app.get('/purchase', async (req, res) => {
+// app.get('/purchase', async (req, res) => {
 
-    const messageQuery = 'SELECT * from purchases2'
-    const query = await db.query(messageQuery);
-    // res.locals.databaseInfo = query;
+//     const messageQuery = 'SELECT * from purchases2'
+//     const query = await db.query(messageQuery);
+//     // res.locals.databaseInfo = query;
 
-    res.status(200).send('Hello is me');
-}); 
+//     res.status(200).send('Hello is me');
+// }); 
 
 
 
