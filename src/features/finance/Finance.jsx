@@ -5,6 +5,8 @@ import { updatePurchases } from './financeSlice';
 export default function Finance() {
     const purchaseList = useSelector((state) => state.finance.purchases);
     const dispatch = useDispath();
+
+    dispatch(updatePurchases(purchaseList, ))
     
 
     return(
