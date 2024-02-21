@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
     "build": "webpack --mode=production --node-env=production",
-    "dev": "webpack serve --open --mode=development && nodemon server.js",
+    "dev": "webpack serve --open --mode=development & nodemon server.js",
     "serve": "webpack serve"
   },
   "author": "",
@@ -16,6 +16,7 @@
     "@reduxjs/toolkit": "^2.2.1",
     "express": "^4.18.2",
     "nodemon": "^3.0.3",
+    "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0"
