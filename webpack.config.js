@@ -21,6 +21,7 @@ const config = {
         compress: true,
         port: 8080,
         proxy: {
+            '/home': 'http://localhost:3000',
             '/api': {
             target: 'http://localhost:3000',
             pathRewrite: { '^/api': '' },
@@ -39,7 +40,12 @@ const config = {
         rules: [
             {
                 test: /\.(js|jsx)$/i,
-                loader: 'babel-loader',
+                use: {
+                    loader: 'babel-loader', //loader which we are going to use
+                    options: {
+                      presets: ['@babel/preset-env', '@babel/preset-react'],
+                    },
+                  },
                 exclude: ['/node_modules/'],
             },
             {

@@ -20,7 +20,7 @@ app.use(express.static(path.resolve(__dirname, '../dist')));
 app.use('/home', homeRouter);
 app.use('/finance', financeRouter);
 
-
+console.log('INSIDE SERVER FOLDER')
 
 
 // Catch-all route handler
