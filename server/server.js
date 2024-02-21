@@ -9,6 +9,8 @@ const app = express();
 
 const PORT = 3000;
 
+const db = require('./models/FinanceModel.js')
+
 // Handle parsing of request body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -20,7 +22,17 @@ app.use(express.static(path.resolve(__dirname, '../dist')));
 app.use('/home', homeRouter);
 app.use('/finance', financeRouter);
 
-console.log('INSIDE SERVER FOLDER')
+
+app.get('/purchase', async (req, res) => {
+
+    const messageQuery = 'SELECT * from purchases2'
+    const query = await db.query(messageQuery);
+    // res.locals.databaseInfo = query;
+
+    res.status(200).send('Hello is me');
+}); 
+
+
 
 
 // Catch-all route handler

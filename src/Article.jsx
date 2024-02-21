@@ -4,9 +4,9 @@ function Article(props) {
 
     // <img src={props.img} />
   return (
-    
+
     <tr>
-      <td> <a href={props.url}>{props.title}</a></td>
+      <td> <img src={props.img} /> <a href={props.url}>{props.title}</a></td>
     </tr>
 
   

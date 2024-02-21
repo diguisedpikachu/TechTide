@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Article from "./Article.jsx";
 
 
@@ -8,8 +8,8 @@ import Article from "./Article.jsx";
 const HomeContainer = () => {
 
     const articleObjects = [];
-    const titles = [];
-    const articleComponentList = [];
+    const [articleComponentList , setArticleComponentList] = useState([]);
+    const newarticleComponentList = [];
 
     fetch('http://localhost:3000/home/getToken')
     .then((response) => response.json())
@@ -33,14 +33,15 @@ const HomeContainer = () => {
             console.log(subredditData);
             for (let i = 0; i < subredditData.data.children.length; i++){
                 articleObjects.push(subredditData.data.children[i]);
-                // let imageLink = '';
-                // if (subredditData.data.children[i].data.preview.images){
-                //     imageLink = subredditData.data.children[i].data.preview.images[0].source.url;
-                // }
-                articleComponentList.push( <Article  key={i} title={subredditData.data.children[i].data.title} url={subredditData.data.children[i].data.url} />)
+                let imageLink = '';
+                if (subredditData.data.children[i].data.preview !== undefined){
+                    imageLink = subredditData.data.children[i].data.preview.images[0].source.url;
+                }
+                newarticleComponentList.push( <Article  key={i} img={imageLink} title={subredditData.data.children[i].data.title} url={subredditData.data.children[i].data.url} />)
 
             }
-            console.log(articleComponentList);
+            setArticleComponentList(newarticleComponentList);
+            console.log(newarticleComponentList);
         });
 
     })

@@ -40,12 +40,14 @@ const config = {
         rules: [
             {
                 test: /\.(js|jsx)$/i,
-                use: {
-                    loader: 'babel-loader', //loader which we are going to use
-                    options: {
-                      presets: ['@babel/preset-env', '@babel/preset-react'],
+                use: [
+                    {
+                      loader: 'babel-loader',
+                      options: {
+                        presets: [['@babel/preset-env'], ['@babel/preset-react']],
+                      },
                     },
-                  },
+                  ],
                 exclude: ['/node_modules/'],
             },
             {
