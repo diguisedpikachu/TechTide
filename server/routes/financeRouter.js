@@ -6,4 +6,8 @@ router.post('/', financeController.makePurchase, financeController.getPurchaseLi
   res.status(200).json(res.locals.purchaseList);
 });
 
+router.post('/makePurchase', financeController.makePurchase, financeController.getPurchaseList, (req, res) => {
+  res.status(200).json(res.locals.purchaseList);
+});
+
 module.exports = router;

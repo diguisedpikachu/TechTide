@@ -1,0 +1,44 @@
+.allInputs {
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+.unorderList {
+    list-style-type: none;
+}
+
+.mainApp {
+    background-color: rgb(173, 140, 140);
+    height: 750px;
+}
+
+.labels {
+
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    gap: 10px;
+
+}
+
+.fileButtons {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    gap: 10px;
+    
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button { 
+    background-color: lightblue
+}
